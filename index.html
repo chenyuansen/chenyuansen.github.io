@@ -152,6 +152,206 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Git实战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/14/Git%E5%AE%9E%E6%88%98/">Git实战</a>
+    </h1>
+  
+
+        
+        
+
+
+<a href="/2019/12/14/Git%E5%AE%9E%E6%88%98/" class="archive-article-date">
+  	<time datetime="2019-12-14T05:33:44.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
+</a>
+
+        
+
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">792字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+</div>
+
+          
+         <!-- 添加完成 -->
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="第一章-快速入门"><a href="#第一章-快速入门" class="headerlink" title="第一章 快速入门"></a>第一章 快速入门</h1><h2 id="1-1-什么是Git"><a href="#1-1-什么是Git" class="headerlink" title="1.1 什么是Git"></a>1.1 什么是Git</h2><h2 id="1-2-为什么要做版本控制"><a href="#1-2-为什么要做版本控制" class="headerlink" title="1.2 为什么要做版本控制"></a>1.2 为什么要做版本控制</h2><h2 id="1-3-安装Git"><a href="#1-3-安装Git" class="headerlink" title="1.3 安装Git"></a>1.3 安装Git</h2><h1 id="第二章-常规使用"><a href="#第二章-常规使用" class="headerlink" title="第二章 常规使用"></a>第二章 常规使用</h1><h2 id="2-1-第一阶段：单枪匹马开始干"><a href="#2-1-第一阶段：单枪匹马开始干" class="headerlink" title="2.1 第一阶段：单枪匹马开始干"></a>2.1 第一阶段：单枪匹马开始干</h2><p>想要让git对于一个目录进行版本控制需要以下步骤：</p>
+<ul>
+<li><p>进入要管理的文件夹</p>
+</li>
+<li><p>执行初始化命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>管理目录下的文件状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">注：新增的文件和修改后的文件都是红色的</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>管理指定文件（红变绿）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>个人配置信息：用户名、邮箱【只要执行一次即可】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &#39;描述版本信息&#39;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-2-第二阶段：拓展新功能"><a href="#2-2-第二阶段：拓展新功能" class="headerlink" title="2.2 第二阶段：拓展新功能"></a>2.2 第二阶段：拓展新功能</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add</span><br><span class="line">git commit -m &#39;短视频功能&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-第三阶段：“约饭事件”"><a href="#2-3-第三阶段：“约饭事件”" class="headerlink" title="2.3 第三阶段：“约饭事件”"></a>2.3 第三阶段：“约饭事件”</h2><ul>
+<li><p>回滚至之前版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回滚之之后版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-4-第四阶段：小总结"><a href="#2-4-第四阶段：小总结" class="headerlink" title="2.4 第四阶段：小总结"></a>2.4 第四阶段：小总结</h2><h2 id="2-5-第五阶段：商城-amp-紧急修复bug"><a href="#2-5-第五阶段：商城-amp-紧急修复bug" class="headerlink" title="2.5 第五阶段：商城&amp;紧急修复bug"></a>2.5 第五阶段：商城&amp;紧急修复bug</h2><h3 id="2-5-1-分支"><a href="#2-5-1-分支" class="headerlink" title="2.5.1 分支"></a>2.5.1 分支</h3><p>分支可以给使用者提供多个环境，意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。</p>
+<h3 id="2-5-2-紧急修复bug方案"><a href="#2-5-2-紧急修复bug方案" class="headerlink" title="2.5.2 紧急修复bug方案"></a>2.5.2 紧急修复bug方案</h3><p><img src="C:%5CUsers%5Ccys%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191210103935823.png" alt="image-20191210103935823"></p>
+<h3 id="2-5-3-命令总结"><a href="#2-5-3-命令总结" class="headerlink" title="2.5.3 命令总结"></a>2.5.3 命令总结</h3><ul>
+<li><p>查看分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名称</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名称</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并分支（可能产生冲突）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge 要合并的分支 </span><br><span class="line">注：要切换分再合并</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名称</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-5-4-工作流"><a href="#2-5-4-工作流" class="headerlink" title="2.5.4 工作流"></a>2.5.4 工作流</h3><p><img src="C:%5CUsers%5Ccys%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191210114951153.png" alt="image-20191210114951153"></p>
+<h2 id="2-6-第五个阶段：进军三里屯"><a href="#2-6-第五个阶段：进军三里屯" class="headerlink" title="2.6 第五个阶段：进军三里屯"></a>2.6 第五个阶段：进军三里屯</h2><p>在家里上传代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 给远程仓库起别名</span><br><span class="line">	git remote add origin 远程仓库地址</span><br><span class="line">2. 向远程推送代码</span><br><span class="line">	git push -u origin 分支名称</span><br></pre></td></tr></table></figure>
+
+<p>到公司新电脑上第一次获取代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 克隆远程仓库代码</span><br><span class="line">	git clone 远程仓库地址（内部已实现git remote add origin 远程仓库地址）</span><br><span class="line">2. 切换分支</span><br><span class="line">	git checkout 分支名称</span><br></pre></td></tr></table></figure>
+
+<p>在公司进行开发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 切换到dev分支进行开发</span><br><span class="line">	git checkout dev</span><br><span class="line">2. 把master分支合并到dev,确保获取最新代码[仅执行一次]</span><br><span class="line">	git merge master</span><br><span class="line">3. 修改代码</span><br><span class="line">4. 提交代码</span><br><span class="line">	git add .</span><br><span class="line">	git commit -m &#39;提交信息&#39;</span><br><span class="line">	git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p>回到家中继续写代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 切换到dev分支进行开发</span><br><span class="line">	git checkout dev</span><br><span class="line">2. 拉代码</span><br><span class="line">	git pull origin dev</span><br><span class="line">3. 继续开发</span><br><span class="line">4. 提交代码</span><br><span class="line">	git add .</span><br><span class="line">	git commit -m &#39;提交信息&#39;</span><br><span class="line">	git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p>如此循环。。。</p>
+<p>开发完毕，要上线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 将dev分支合并到master，进行上线</span><br><span class="line">	git checkout dev</span><br><span class="line">	git merge dev</span><br><span class="line">	git push origin master</span><br><span class="line">2.把dev分支也推送到远程</span><br><span class="line">	git checkout dev</span><br><span class="line">	git merge master&#x2F;&#x2F;也可以将最新的master合并回dev,确保dev也是最新的</span><br><span class="line">	git push origin dev</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin dev</span><br><span class="line">等同于下面两条命令</span><br><span class="line">git fetch origin dev</span><br><span class="line">git merge origin&#x2F;dev</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-6-9-快速解决冲突"><a href="#2-6-9-快速解决冲突" class="headerlink" title="2.6.9 快速解决冲突"></a>2.6.9 快速解决冲突</h2><ol>
+<li><p>安装beyond compare</p>
+</li>
+<li><p>在git中配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --local merge.tool bc3</span><br><span class="line">git config --global mergetool.bc3.path &quot;D:\Beyond Compare 4\BCompare.exe&quot;</span><br><span class="line">git config --local mergetool.keepBackup false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用beyond compare解决冲突</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mergetool</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+
+      <!--添加版本声明代码开始-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
+      <!--添加版本声明代码结束-->
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/14/Git%E5%AE%9E%E6%88%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-this is a test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -490,6 +690,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
